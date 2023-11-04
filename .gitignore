@@ -1,0 +1,32 @@
+# Byte-compiled / optimized Python files
+__pycache__/
+*.pyc
+*.pyo
+__init__.pyc
+__init__.pyo
+
+# Django database files
+db.sqlite3
+
+# Media and static files (usually served by Django during development)
+media/
+staticfiles/
+
+# Secret settings file containing sensitive information (e.g., API keys)
+secret_settings.py
+
+# Logs and error output
+*.log
+*.pot
+*.pyc
+__pycache__/
+
+# Backup files
+*.bak
+
+# Environment configuration files
+.env
+
+# Virtual environment directory
+venv/
+env/
