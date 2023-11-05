@@ -29,9 +29,19 @@
           <div class="frame-3">
             <div class="hi-sparky-wrapper">
               <p class="hi-sparky">
-                <span class="text-wrapper-4">Hi, </span> <span class="text-wrapper-6">Sparky</span>
+                <!-- <span class="text-wrapper-4">Hi, </span> <span class="text-wrapper-6"> <a>Sparky</a> </span> -->
+                {% if user.is_authenticated %}
+                        <span class="text-wrapper-4">Hi, </span> <span class="text-wrapper-6"> <a>{{ user.username }}</a> </span>
+                      {% else %}
+                       <span class="text-wrapper-4">Hi, </span> <span class="text-wrapper-6" ><a href="{% provider_login_url 'google' %}">Sparky</a></span>
+                      {% endif %}
               </p>
             </div>
+            {% if user.is_authenticated %}
+              <img class = "ellipse"
+              src="{{ user.socialaccount_set.all.0.get_avatar_url }}"
+              />
+            {% else %}
             <img class="ellipse" src="img/ellipse-1-2.png" />
           </div>
         </div>
