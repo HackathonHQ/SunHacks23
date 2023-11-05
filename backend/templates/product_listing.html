@@ -1,4 +1,3 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -7,51 +6,35 @@
         <meta name="viewport" content="width=device-width, intial-scale=1.0" />
         <link rel="icon" type="image/x-icon" href="{% static '/img/tD.svg' %}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="{%static 'index.css' %}" />
+        <link rel="stylesheet" href="product_listing.css" />
         <title>tradeDaddy</title>
     </head>
     <body>
         <header>
             <div class="navbar">
-                <a href="logged_in" class="login_btn">Log In</a>
+                <div class="user"><a href="#">Welcome, Sparky!</a></div>
                 <div class="toggle_btn">
                     <i class="fa-solid fa-bars"></i>
                 </div>
                 <ul class="links">
-                    <li><a href="logged_in">Home</a></li>
-                    <!-- <li><a href="search">Search Product</a></li> -->
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="list">List a Product</a></li>
                     <li><a href="contact">Contact Us</a></li>
                 </ul>
                 
             </div>
+
             <div class="dropdown_menu">
-              <li><a href="logged_in">Home</a></li>
-              <li><a href="list">List a Product</a></li>
-              <li><a href="contact">Contact Us</a></li>
-              <li><a href="logged_in" class="login_btn">Log In</a></li>
+                <li><a href="logged_in.html">Home</a></li>
+                <!-- <li><a href="search">Search Product</a></li> -->
+                <li><a href="list">List a Product</a></li>
+                <li><a href="contact">Contact Us</a></li>
+                <li><a href="index.html" class="user_btn">Log Out</a></li>
             </div>
         </header>
 
         <main>
-            <section id="hero">
-                <div class="hero">
-                    <img src="{% static 'img/logo.png' %}" alt="tradeDaddy logo" id="logo">
-                    <div class="search_box">
-                        <div class="input_box">
-                            <input id="product_name" type="text" required />
-                            <label for="product_name"><i class="fa-solid fa-magnifying-glass"></i> What product are you looking to borrow / buy?</label>
-                        </div>
-                        <button>Search <i class="fa-solid fa-angle-right"></i></button>
-                    </div>
-                    <p></p><p></p><p></p>
-                    <p>
-                        Frequently Rented Products: Screw Drivers, Measuring Tape, Wrenches...
-                    </p>
-                    <p>
-                        Frequently Bought Products: Cycles, Skateboards, Chairs...
-                    </p>
-                </div>
+            
 
         </main>
 
