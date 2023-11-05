@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, intial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <title>tradeDaddy</title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica', sans-serif;
+  }
+
+  body {
+    height: 100vh;
+    background-color: white;
+    background-size: cover;
+    background-position: center;
+  }
+
+
+
+  li {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+  }
+
+  a:hover {
+    font-weight: bolder;
+  }
+
+  /* HEADER */
+  header {
+    position: relative;
+    padding: 0 2rem;
+  }
+
+  .navbar {
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navbar .user a {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .navbar .links {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .navbar .toggle_btn {
+    right: 2rem;
+    color: black;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+  }
+
+  .login_btn {
+    background-color: black;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2 ease;
+  }
+
+  .login_btn:hover {
+    scale: 1.05;
+    color: white;
+  }
+
+  .login_btn:active {
+    scale: 0.95;
+  }
+
+
+  /* DROPDOWN MENU */
+  .dropdown_menu {
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    height: 0;
+    width: 200px;
+    background: rgba(225, 225, 225, 0.4);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .dropdown_menu.open {
+    height: 225px;
+  }
+
+  .dropdown_menu li {
+    padding: 0.99rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dropdown_menu .action_btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  td:nth-child(2),
+  td:nth-child(3),
+  td:nth-child(4),
+  td:nth-child(5) {
+    margin-left: 10vw;
+    margin-right: 10vw;
+    padding-left: 10vw;
+  }
+
+  button#cds {
+    margin-left: 10vw;
+    margin-right: 10vw;
+    padding: 3vh 0;
+    width: 15vw;
+    font-size: 2.5vh;
+    background-color: chartreuse;
+    border-radius: 1vw;
+
+  }
+
+  button#cds:hover {
+    font-size: 2.45vh;
+    font-weight: 700;
+  }
+
+
+
+
+  /* RESPONSIVE DESIGN */
+  @media(max-width: 992px) {
+
+    .navbar .links,
+    .navbar .login_btn {
+      display: none;
+    }
+
+    .navbar .toggle_btn {
+      display: block;
+    }
+
+    .dropdown_menu {
+      display: block;
+    }
+  }
+
+  @media(max-width: 992px) {
+    .dropdown_menu {
+      left: 2rem;
+      width: unset;
+    }
+  }
+
+  main {
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  p#ferpa {
+    justify-content: center;
+    text-align: center;
+    width: 20vw;
+    margin-left: 7.3vw;
+    margin-top: 2vh;
+  }
+
+  div.productCard {
+    width: 90vw;
+    height: 30vh;
+    margin: 0 auto;
+    /* display: grid;
+    grid-template-columns: repeat(4, 1fr); */
+    /* grid-gap: 2rem; */
+    margin: 1em;
+    padding: 1em;
+    background: whitesmoke;
+    border-radius: 1vw;
+    z-index: 0;
+    margin-left: 5vw;
+  }
+
+  img {
+    width: 20vw;
+    height: 25vh;
+    object-fit: cover;
+    z-index: 1;
+    border-radius: 1vw;
+    border: #000 0.3em solid;
+  }
+
+
+  /* FOOTER */
+
+  footer {
+    background-color: #000;
+    color: #fff;
+  }
+
+  /* Footer default style */
+  footer a {
+    text-decoration: none;
+    color: #fff;
+  }
+
+  footer h2 {
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+  }
+
+  footer p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  /* Footer Content */
+  .footer_content {
+    padding: 2rem;
+  }
+
+  .hero .search_box {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero .search_box .input_box {
+    width: 100%;
+    position: relative;
+    max-width: 500px;
+  }
+
+  .hero .search_box .input_box input {
+    width: 100%;
+    height: 50px;
+    padding: 0 10px;
+    border: auto;
+    outline: auto;
+    font-size: 1rem;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+
+  .hero .search_box .input_box label {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: gray;
+    font-weight: 300;
+    font-size: 1rem;
+  }
+
+  .hero .search_box .input_box input:focus+label,
+  .hero .search_box .input_box input:valid+label {
+    opacity: 0;
+  }
+
+  .hero .search_box button {
+    height: 50px;
+    padding: 0 30px;
+    background-color: black;
+    color: white;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+  }
+
+  .hero .search_box button:hover {
+    color: lightgray;
+  }
+
+  .hero p {
+    padding: 5px;
+  }
+
+  .footer_content .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Contact */
+  .footer_content .logo {
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+    font-size: 46px;
+    font-weight: bold;
+    line-height: 1;
+  }
+
+  .footer_content .contact .icon {
+    font-size: 24px;
+    margin-right: 5px;
+  }
+
+  .footer_content .social_media_links {
+    margin-top: 2rem;
+  }
+
+  .footer_content .social_media_links .icon {
+    font-size: 28px;
+    margin-right: 1rem;
+  }
+
+  /* Footer Copyright */
+  .footer_copyright {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Footer Responsive Design */
+  @media (max-width: 991px) {
+    main h1 {
+      margin: 3rem 0;
+      font-size: 3rem;
+    }
+
+  }
+
+  @media (max-width: 767px) {
+    .footer_content .container {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<body>
+  <header>
+    <div class="navbar">
+      <div class="user"><a href="#">Welcome, Sparky!</a></div>
+      <div class="toggle_btn">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+      <ul class="links">
+        <li><a href="https://tradedaddy.us">Home</a></li>
+        <!-- <li><a href="search">Search Product</a></li> -->
+        <li><a href="list">List a Product</a></li>
+        <li><a href="contact">Contact Us</a></li>
+      </ul>
+
+    </div>
+
+    <div class="dropdown_menu">
+      <li><a href="logged_in.html">Home</a></li>
+      <!-- <li><a href="search">Search Product</a></li> -->
+      <li><a href="list">List a Product</a></li>
+      <li><a href="contact">Contact Us</a></li>
+      <li><a href="index.html" class="user_btn">Log Out</a></li>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="search_box">
+      <div class="input_box">
+        <input id="product_name" type="text" required />
+        <label for="product_name"><i class="fa-solid fa-magnifying-glass"></i> What product are you looking to borrow /
+          buy?</label>
+      </div>
+      <button>Search <i class="fa-solid fa-angle-right"></i></button>
+    </div>
+  </div>
+
+
+  <main>
+    <div class="productCard">
+      <table>
+        <tr>
+          <td>
+            <img src="img/logo.png" alt="" srcset="">
+          </td>
+          <td>
+            <h2>3.99$</h2>
+            <h2>Product Name</h2>
+            <p>Product Description</p>
+          </td>
+          <td>
+            <button id="cds">See Contact Details</button>
+            <p id="ferpa">The details will soon be sent to your registered email & mobile number</p>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+  </main>
+
+  <footer>
+    <!-- Footer Content -->
+    <div class="footer_content">
+      <div class="container">
+        <!-- Contact -->
+        <div class="col contact">
+          <p>
+            <a href="/" class="logo">tradeDaddy</a>
+          </p>
+          <p>
+            <ion-icon class="icon" name="location"></ion-icon> 500E University Drive, Tempe 85281
+          </p>
+          <p>
+            <ion-icon class="icon" name="mail"></ion-icon>
+            <a href="mailto:info.tradedaddy.com">info@tradedaddy.com</a>
+          </p>
+          <p><ion-icon class="icon" name="call"></ion-icon>623-275-2386</p>
+          <!-- Social Links -->
+          <div class="social_media_links">
+            <a href="http://facebook.com" target="_blank">
+              <ion-icon class="icon" name="logo-facebook"></ion-icon>
+            </a>
+            <a href="http://instagram.com" target="_blank">
+              <ion-icon class="icon" name="logo-instagram"></ion-icon>
+            </a>
+            <a href="http://twitter.com" target="_blank">
+              <ion-icon class="icon" name="logo-twitter"></ion-icon>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Footer Copyright -->
+      <div class="footer_copyright">Copyright&copy;2023 tradeDaddy</div>
+  </footer>
+
+  <script>
+    const toggleBtn = document.querySelector('.toggle_btn')
+    const toggleBtnIcon = document.querySelector('.toggle_btn i')
+    const dropDownMenu = document.querySelector('.dropdown_menu')
+
+    toggleBtn.onclick = function () {
+      dropDownMenu.classList.toggle('open')
+      const isOpen = dropDownMenu.classList.contains('open')
+
+      toggleBtnIcon.classList = isOpen
+        ? 'fa-solid fa-xmark'
+        : 'fa-solid fa-bars'
+    }
+  </script>
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
