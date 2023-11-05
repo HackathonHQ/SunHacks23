@@ -127,7 +127,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / "/static"
+
+     os.path.join(BASE_DIR, 'static'),
     
 ]
 
@@ -158,3 +159,14 @@ SITE_ID = 2
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+SOCIALACCOUNT_AUTO_SIGNUP = True
+SOCIALACCOUNT_ADAPTER = 'backend.adapter.MySocialAccountAdapter'
+SOCIALACCOUNT_EMAIL_VERIFICATION = 'none'
+
+SOCIALACCOUNT_FORMS = {
+    'signup': '.forms.CustomSignupForm',
+}
+
+AUTH_USER_MODEL = 'inventory.User'
+

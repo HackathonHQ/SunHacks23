@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
+from allauth.socialaccount.providers.google.views import oauth2_login
 from django.http import JsonResponse
 from inventory.models import Item
 # Create your views here.
@@ -43,4 +44,5 @@ def update_item(request, id):
     return JsonResponse({'item': item.to_json()})
 
 def login(request):
-    pass
+    return oauth2_login(request)
+    
