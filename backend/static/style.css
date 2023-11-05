@@ -1,0 +1,208 @@
+.desktop {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.desktop .div {
+  background-color: #ffffff;
+  width: 1440px;
+  height: 1517px;
+  position: relative;
+}
+
+.desktop .frame {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 239px;
+  left: 222px;
+}
+
+.desktop .trade-daddy {
+  position: relative;
+  width: 997px;
+  margin-top: -1px;
+  font-family: "Outfit", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 128px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.desktop .text-wrapper {
+  font-family: "Outfit", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 128px;
+  letter-spacing: 0;
+}
+
+.desktop .span {
+  font-weight: 700;
+}
+
+.desktop .text-wrapper-2 {
+  position: relative;
+  width: 562px;
+  font-family: "Roboto Flex", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 40px;
+  text-align: right;
+  letter-spacing: 2.8px;
+  line-height: normal;
+}
+
+.desktop .menu {
+  position: absolute;
+  width: 55px;
+  height: 31px;
+  top: 54px;
+  left: 40px;
+}
+
+.desktop .frame-2 {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: absolute;
+  top: 475px;
+  left: 145px;
+}
+
+.desktop .search-bar-wrapper {
+  position: relative;
+  width: 1150px;
+  height: 90px;
+}
+
+.desktop .search-bar {
+  display: inline-flex;
+  align-items: flex-start;
+  position: relative;
+  top: 10px;
+  left: 10px;
+}
+
+.desktop .div-wrapper {
+  display: flex;
+  width: 1134px;
+  align-items: center;
+  gap: 50px;
+  padding: 15px 30px;
+  position: relative;
+  margin-top: -2px;
+  margin-bottom: -2px;
+  margin-left: -2px;
+  margin-right: -2px;
+  border-radius: 50px;
+  border: 2px solid;
+  border-color: #000000bf;
+}
+
+.desktop .text-wrapper-3 {
+  position: relative;
+  width: fit-content;
+  font-family: "Outfit", Helvetica;
+  font-weight: 400;
+  color: #00000080;
+  font-size: 32px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.desktop .location {
+  display: flex;
+  width: 900px;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 30px;
+  padding: 15px 50px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.desktop .arizona-state {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: "Outfit", Helvetica;
+  font-weight: 700;
+  color: transparent;
+  font-size: 32px;
+  text-align: right;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.desktop .text-wrapper-4 {
+  color: #000000;
+}
+
+.desktop .text-wrapper-5 {
+  color: #720000;
+  text-decoration: underline;
+}
+
+.desktop .frame-wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px;
+  position: absolute;
+  top: 47px;
+  left: 811px;
+}
+
+.desktop .frame-3 {
+  position: relative;
+  width: 565px;
+  height: 95px;
+}
+
+.desktop .hi-sparky-wrapper {
+  display: flex;
+  width: 450px;
+  height: 88px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  position: absolute;
+  top: 7px;
+  left: 0;
+}
+
+.desktop .hi-sparky {
+  position: relative;
+  flex: 1;
+  font-family: "Outfit", Helvetica;
+  font-weight: 400;
+  color: transparent;
+  font-size: 48px;
+  text-align: right;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.desktop .text-wrapper-6 {
+  font-weight: 700;
+  color: #720000;
+  text-decoration: underline;
+}
+
+.desktop .ellipse {
+  position: absolute;
+  width: 95px;
+  height: 95px;
+  top: 0;
+  left: 470px;
+  object-fit: cover;
+}
